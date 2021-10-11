@@ -1,15 +1,44 @@
+/**
+ *  @file    ../app/AnalogSensor.cpp
+ *  @author  Rahul Karanam
+ *  @copyright Rahul Karanam
+ *  @brief  ENPM808X_Valgrind_Exercise
+ */
+
 #include <AnalogSensor.hpp>
 #include <numeric>
 #include <vector>
+
+
+/**
+ * @brief Create a constructor class for AnalogSensor.
+ * @param  int samples - the sensor sample readings 
+ * @return None
+ */
 
 AnalogSensor::AnalogSensor(unsigned int samples)
     : mSamples(samples)
 {
 }
 
+
+/**
+ * @brief Created Class Destructor
+ * @return None
+ */
+
+
 AnalogSensor::~AnalogSensor()
 {
 }
+
+
+/**
+ * @brief Create a function which will average the sensor inputs .
+ * @param  int mSamples - the sensor sample readings 
+ * @return result
+ */
+
 
 int AnalogSensor::Read()
 {
