@@ -17,7 +17,7 @@ int AnalogSensor::Read()
    /* created a new vector which has been initalized and
       removed new because it creates memory leakage to a uninitalized vector */
     std::vector<int> readings(mSamples,10);
-    double result = std::accumulate( readings->begin(), readings->end(), 0.0 ) / readings->size();
+    double result = std::accumulate( readings.begin(), readings.end(), 0.0 ) / readings.size();
     return result;
 }
 
