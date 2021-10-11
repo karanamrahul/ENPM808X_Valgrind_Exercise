@@ -1,0 +1,3 @@
+ubu@ubu-QEMU-Virtual-Machine:~/Documents/ENPM808X/Week_6/ENPM808X_Valgrind_Exercise$ cpplint $(find . -name *.cpp | grep -vE -e "./build")
+Done processing ./app/AnalogSensor.cpp
+Done processing ./app/main.cpp
