@@ -1,0 +1,29 @@
+==4021== Memcheck, a memory error detector
+==4021== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4021== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4021== Command: ./app/shell-app
+==4021== 
+Averaged sensor reading: 10
+==4021== Conditional jump or move depends on uninitialised value(s)
+==4021==    at 0x10A240: main (main.cpp:9)
+==4021== 
+==4021== 
+==4021== HEAP SUMMARY:
+==4021==     in use at exit: 44 bytes in 2 blocks
+==4021==   total heap usage: 4 allocs, 2 frees, 76,844 bytes allocated
+==4021== 
+==4021== 44 (24 direct, 20 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==4021==    at 0x484A3C4: operator new(unsigned long) (in /usr/lib/aarch64-linux-gnu/valgrind/vgpreload_memcheck-arm64-linux.so)
+==4021==    by 0x10A3C3: AnalogSensor::Read() (AnalogSensor.cpp:16)
+==4021==    by 0x10A217: main (main.cpp:7)
+==4021== 
+==4021== LEAK SUMMARY:
+==4021==    definitely lost: 24 bytes in 1 blocks
+==4021==    indirectly lost: 20 bytes in 1 blocks
+==4021==      possibly lost: 0 bytes in 0 blocks
+==4021==    still reachable: 0 bytes in 0 blocks
+==4021==         suppressed: 0 bytes in 0 blocks
+==4021== 
+==4021== Use --track-origins=yes to see where uninitialised values come from
+==4021== For lists of detected and suppressed errors, rerun with: -s
+==4021== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
