@@ -5,21 +5,23 @@
 
 ## Overview
 
-Simple starter C++ project with:
-
-- cmake
-- googletest
+- Checking and resolving errors using valgrind.
+- Check the valgrind_erros.txt for the errors and valgrind_errors_resolved.txt for the resolved build.
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/karanamrahul/ENPM808X_Valgrind_Exercise.git
 cd <path to repository>
 mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run Valgrind : valgrind --leak-check=full ./app/shell-app
+--> this will output all your errors.
+
+Run kcachegrind : valgrind --tool=callgrind ./app/shell-app
+--> The above command will generate a callgrind output file.
+run kcachegrind to open the memory profile gui and then select the call grind output file.
 ```
 
 ## Building for code coverage (for assignments beginning in Week 4)
@@ -39,22 +41,22 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/karanamrahul/ENPM808X_Valgrind_Exercise.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
 
 ```
 cd ~/workspace
-mkdir -p boilerplate-eclipse
-cd boilerplate-eclipse
+mkdir -p ENPM808X_Valgrind_Exercise
+cd ENPM808X_Valgrind_Exercise
 cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../cpp-boilerplate/
 ```
 
 ## Import
 
 Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
-Select "boilerplate-eclipse" directory created previously as root directory -> Finish
+Select "ENPM808X_Valgrind_Exercise" directory created previously as root directory -> Finish
 
 # Edit
 
@@ -63,12 +65,12 @@ Source files may be edited under the "[Source Directory]" label in the Project E
 
 ## Build
 
-To build the project, in Eclipse, unfold boilerplate-eclipse project in Project Explorer,
+To build the project, in Eclipse, unfold ENPM808X_Valgrind_Exercise project in Project Explorer,
 unfold Build Targets, double click on "all" to build all projects.
 
 ## Run
 
-1. In Eclipse, right click on the boilerplate-eclipse in Project Explorer,
+1. In Eclipse, right click on the ENPM808X_Valgrind_Exercise in Project Explorer,
 select Run As -> Local C/C++ Application
 
 2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
@@ -80,7 +82,7 @@ select Run As -> Local C/C++ Application
 1. Set breakpoint in source file (i.e. double click in the left margin on the line you want 
 the program to break).
 
-2. In Eclipse, right click on the boilerplate-eclipse in Project Explorer, select Debug As -> 
+2. In Eclipse, right click on the ENPM808X_Valgrind_Exercise in Project Explorer, select Debug As -> 
 Local C/C++ Application, choose the binaries to run (e.g. shell-app).
 
 3. If prompt to "Confirm Perspective Switch", select yes.
